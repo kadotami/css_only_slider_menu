@@ -1,0 +1,73 @@
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden; }
+
+#cosm-header {
+  height: 40px;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: #00628E;
+  z-index: 10000000;
+  transition: left 0.1s linear;
+  -webkit-transition: left 0.1s linear; }
+  #cosm-header label img {
+    width: 24px;
+    height: 24px;
+    margin: 8px; }
+
+#cosm-input {
+  display: none; }
+
+.cosm-cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: none;
+  z-index: 10000;
+  background: rgba(0, 0, 0, 0.3); }
+
+#cosm-nav {
+  position: fixed;
+  height: 100%;
+  width: 240px;
+  top: 0;
+  left: -240px;
+  background: #26292C;
+  z-index: 1000000000;
+  -webkit-transition: left 0.1s linear;
+  transition: left 0.1s linear; }
+  #cosm-nav li {
+    list-style: none;
+    color: #fff;
+    height: 48px;
+    line-height: 48px;
+    padding-left: 24px; }
+
+#cosm-container {
+  padding-top: 40px;
+  position: relative;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  box-sizing: border-box;
+  transition: left 0.1s linear;
+  z-index: 1;
+  -webkit-transition: left 0.1s linear; }
+
+#cosm-input:checked ~ #cosm-menu-button {
+  left: 240px; }
+#cosm-input:checked ~ #cosm-header {
+  left: 240px; }
+#cosm-input:checked ~ #cosm-nav {
+  left: 0; }
+#cosm-input:checked ~ #cosm-container {
+  left: 240px; }
+#cosm-input:checked + .cosm-cover {
+  display: block; }

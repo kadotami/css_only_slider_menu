@@ -1,0 +1,99 @@
+$header_height: 40px;
+$header_color: #00628E;
+$button_width: 24px;
+$nav_width: 240px;
+$nav_color: #26292C;
+
+
+body {
+  margin: 0;
+  height: 100%;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+#cosm-header {
+  height: $header_height;
+  width: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: $header_color;
+  z-index: 10000000;
+  transition: left 0.1s linear;
+  -webkit-transition: left 0.1s linear;
+  label {
+    img {
+      width: $button_width;
+      height: $button_width;
+      margin: ($header_height - $button_width) /2 ;
+    }
+  }
+}
+#cosm-input {
+  display: none;
+}
+
+#cosm-menu-button {
+}
+
+.cosm-cover {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: none;
+  z-index: 10000;
+  background: rgba(0,0,0,0.3);
+}
+
+#cosm-nav {
+  position: fixed;
+  height: 100%;
+  width: $nav_width;
+  top: 0;
+  left: - $nav_width;
+  background: $nav_color;
+  z-index: 1000000000;
+  -webkit-transition: left 0.1s linear;
+  transition: left 0.1s linear;
+  li {
+    list-style: none;
+    color: #fff;
+    height: 48px;
+    line-height: 48px;
+    padding-left: 24px;
+  }
+}
+
+#cosm-container {
+  padding-top: $header_height;
+  position: relative;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow-y: scroll;
+  box-sizing: border-box;
+  transition: left 0.1s linear;
+  z-index: 1;
+  -webkit-transition: left 0.1s linear;
+}
+
+#cosm-input:checked {
+  ~ #cosm-menu-button {
+    left: $nav_width;
+  }
+  ~ #cosm-header {
+    left: $nav_width;
+  }
+  ~ #cosm-nav {
+    left: 0;
+  }
+  ~ #cosm-container {
+    left: $nav_width;
+  }
+  + .cosm-cover {
+    display: block;
+  }
+}
