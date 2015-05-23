@@ -12,12 +12,22 @@ body {
   top: 0;
   background: #00628E;
   z-index: 10000000;
-  transition: left 0.1s linear;
-  -webkit-transition: left 0.1s linear; }
-  #cosm-header label img {
-    width: 24px;
-    height: 24px;
-    margin: 8px; }
+  transition: transform 0.1s linear;
+  -webkit-transition: transform 0.1s linear; }
+  #cosm-header label {
+    position: relative;
+    z-index: 10000000000; }
+    #cosm-header label img {
+      width: 24px;
+      height: 24px;
+      margin: 8px; }
+  #cosm-header h1 {
+    position: absolute;
+    top: 0;
+    margin: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 24px; }
 
 #cosm-input {
   display: none; }
@@ -37,11 +47,11 @@ body {
   height: 100%;
   width: 240px;
   top: 0;
-  left: -240px;
+  transform: translateX(-240px);
   background: #26292C;
   z-index: 1000000000;
-  -webkit-transition: left 0.1s linear;
-  transition: left 0.1s linear; }
+  transition: transform 0.1s linear;
+  -webkit-transition: transform 0.1s linear; }
   #cosm-nav li {
     list-style: none;
     color: #fff;
@@ -57,17 +67,15 @@ body {
   height: 100%;
   overflow-y: scroll;
   box-sizing: border-box;
-  transition: left 0.1s linear;
   z-index: 1;
-  -webkit-transition: left 0.1s linear; }
+  transition: transform 0.1s linear;
+  -webkit-transition: transform 0.1s linear; }
 
-#cosm-input:checked ~ #cosm-menu-button {
-  left: 240px; }
 #cosm-input:checked ~ #cosm-header {
-  left: 240px; }
+  transform: translateX(240px); }
 #cosm-input:checked ~ #cosm-nav {
-  left: 0; }
+  transform: translateX(0); }
 #cosm-input:checked ~ #cosm-container {
-  left: 240px; }
+  transform: translateX(240px); }
 #cosm-input:checked + .cosm-cover {
   display: block; }
