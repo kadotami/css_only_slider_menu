@@ -20,8 +20,8 @@ body {
   top: 0;
   background: $header_color;
   z-index: 10000000;
-  transition: transform 0.1s linear;
-  -webkit-transition: transform 0.1s linear;
+  transition: left 0.1s linear;
+  -webkit-transition: left 0.1s linear;
   label {
     position: relative;
     z-index: 10000000000;
@@ -63,12 +63,11 @@ body {
   height: 100%;
   width: $nav_width;
   top: 0;
-  // left: $nav_width;
-  transform: translateX(-$nav_width);
+  left: - $nav_width;
   background: $nav_color;
   z-index: 1000000000;
-  transition: transform 0.1s linear;
-  -webkit-transition: transform 0.1s linear;
+  transition: left 0.1s linear;
+  -webkit-transition: left 0.1s linear;
   li {
     list-style: none;
     color: #fff;
@@ -87,19 +86,19 @@ body {
   overflow-y: scroll;
   box-sizing: border-box;
   z-index: 1;
-  transition: transform 0.1s linear;
-  -webkit-transition: transform 0.1s linear;
+  transition: left 0.1s linear;
+  -webkit-transition: left 0.1s linear;
 }
 
 #cosm-input:checked {
   ~ #cosm-header {
-    transform: translateX($nav_width);
+    left: $nav_width;
   }
   ~ #cosm-nav {
-    transform: translateX(0);
+    left: 0;
   }
   ~ #cosm-container {
-    transform: translateX($nav_width);
+    left: $nav_width;
   }
   + .cosm-cover {
     display: block;
